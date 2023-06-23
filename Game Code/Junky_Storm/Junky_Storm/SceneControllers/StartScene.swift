@@ -64,10 +64,6 @@ class StartScene : SKScene {
                 let scene = SKScene(fileNamed: "LeaderBoardScene") as? LeaderBoardScene
                 scene?.scaleMode = .aspectFill
                 view?.presentScene(scene)
-            }else if(touchedNode.name == EERF?.name){
-                let scene = SKScene(fileNamed: "RafEsterEggScene") as? RafEsterEggScene
-                scene?.scaleMode = .aspectFill
-                view?.presentScene(scene)
             }
 
         }

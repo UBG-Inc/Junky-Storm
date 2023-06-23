@@ -320,9 +320,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate  {
         if ((firstBody.categoryBitMask == PhysicsCategory.Player) && ((secondBody.categoryBitMask == PhysicsCategory.GoodFood) || (secondBody.categoryBitMask == PhysicsCategory.BadFood)) ){
             CollisionWithFood(player: firstBody.node as! SKSpriteNode, food: secondBody.node as! SKSpriteNode)
         }
-        if(firstBody.categoryBitMask == PhysicsCategory.Player) && (secondBody.categoryBitMask == PhysicsCategory.Key){
-            CollisionWithKey(player: firstBody.node as! SKSpriteNode, key: secondBody.node as! SKSpriteNode)
-        }
+
     }
     
     func CollisionWithFood(player : SKSpriteNode, food: SKSpriteNode){
@@ -359,21 +357,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate  {
         }
         food.removeFromParent()
     }
-    
-    func CollisionWithKey(player : SKSpriteNode, key: SKSpriteNode){
-        
-        let scene = SKScene(fileNamed: "RafEsterEggScene") as? RafEsterEggScene
-        scene?.scaleMode = .aspectFill
-        self.view?.presentScene(scene)
-        key.removeFromParent()
-        
-    }
-    
-//    func playStopBackgroundMusic(){
-//        if ACTPlayerStats.instance.getSound(){
-//            backgroundMusic?.play()
-//        }else {
-//            backgroundMusic?.stop()
-//        }
-//    }
+ 
 }

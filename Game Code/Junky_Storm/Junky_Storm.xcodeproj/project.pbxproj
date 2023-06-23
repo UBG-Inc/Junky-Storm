@@ -37,7 +37,6 @@
 		9F89C4572940E2A4003EED2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F89C4552940E2A4003EED2B /* Main.storyboard */; };
 		9F89C4592940E2A5003EED2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F89C4582940E2A5003EED2B /* Assets.xcassets */; };
 		9F89C45C2940E2A5003EED2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F89C45A2940E2A5003EED2B /* LaunchScreen.storyboard */; };
-		9F89C4862945F181003EED2B /* RafEsterEggScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9F89C4852945F181003EED2B /* RafEsterEggScene.sks */; };
 		9F89C4882945F58C003EED2B /* RafEsterEggScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F89C4872945F58C003EED2B /* RafEsterEggScene.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +75,6 @@
 		9F89C4562940E2A4003EED2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F89C4582940E2A5003EED2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F89C45B2940E2A5003EED2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9F89C4852945F181003EED2B /* RafEsterEggScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RafEsterEggScene.sks; sourceTree = "<group>"; };
 		9F89C4872945F58C003EED2B /* RafEsterEggScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RafEsterEggScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +95,6 @@
 				9F89C44D2940E2A4003EED2B /* GameScene.sks */,
 				9F89C44F2940E2A4003EED2B /* Actions.sks */,
 				9135EF952943680C00F63817 /* StartScene.sks */,
-				9F89C4852945F181003EED2B /* RafEsterEggScene.sks */,
 				9F5061CD294B634C00F89752 /* SplashScene.sks */,
 				9135EF93294367EB00F63817 /* GameOverScene.sks */,
 				9135EF9F2944A6BA00F63817 /* LeaderBoard.sks */,
@@ -258,7 +255,6 @@
 				9135EFA42944FF9600F63817 /* StuEsterEggScene.sks in Resources */,
 				9135EF962943680C00F63817 /* StartScene.sks in Resources */,
 				910DBABF2946A2C000A4D84A /* LeaderBoardScene.sks in Resources */,
-				9F89C4862945F181003EED2B /* RafEsterEggScene.sks in Resources */,
 				9F89C4572940E2A4003EED2B /* Main.storyboard in Resources */,
 				91705994294A455400752C6E /* startBackgroundMusic.mp3 in Resources */,
 				9F89C44E2940E2A4003EED2B /* GameScene.sks in Resources */,
