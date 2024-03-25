@@ -9,6 +9,7 @@ import SpriteKit
 import GameplayKit
 import AVFAudio
 import AudioToolbox
+import GameKit
 
 struct FoodType{
     static let GOOD = 1
@@ -22,7 +23,16 @@ struct PhysicsCategory {
     static let Key : UInt32 = 3
 }
 
-class GameScene: SKScene, SKPhysicsContactDelegate  {
+class GameScene: SKScene, SKPhysicsContactDelegate , GKGameCenterControllerDelegate {
+    
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    var gameCenterPointLeaderBoardID = "Leaderboard1"
+    var gameCenterXPID = "XPid"
+    
     var user : User?
     var player : SKNode?
     var pause : SKNode?
@@ -343,6 +353,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate  {
                 tmp?.removeFromParent()
                 DispatchQueue.main.asyncAfter(deadline: .now() + seconds) { [self] in
                     
+                    
+                    if GKLocalPlayer.local.isAuthenticated {
+                        var finalScore = Int(distance) + (score * 10)
+                        UserDefaults().set(finalScore, forKey: "playerXP")
+                        GKLeaderboard.submitScore(finalScore, context: 0, player: GKLocalPlayer.local, leaderboardIDs: [gameCenterXPID]) { error in
+                            if error != nil {
+                                print("DEBUG: \(error)")
+                            }else {
+                                print("Score: \(finalScore) submitted")
+                            }
+                        }
+                    }else{
+                        print("DEBUG: user not signed into gamecenter")
+                    }
 
                     let scene = SKScene(fileNamed: "GameOverScene") as? GameOverScene
                     self.user?.setDistance(distance: Int(self.distance))

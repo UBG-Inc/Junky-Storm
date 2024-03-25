@@ -9,25 +9,40 @@ import UIKit
 import SpriteKit
 import AVFoundation
 import GameplayKit
+import GameKit
 
 var audio : AVAudioPlayer!
 var itemLB : [User] = itemsJSON
 
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, GameCenterHelperDelegate {
+   
+    
+    
+    private var gamekitHelper = GamekitHelper.shared
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        gamekitHelper.delegate = self
+        gamekitHelper.authenticatePlayer()
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "SplashScene") {
                 // Set the scale mode to scale to fit the window
+                if GKLocalPlayer.local.isAuthenticated {
+                    GKAccessPoint.shared.location = .topLeading
+                    GKAccessPoint.shared.showHighlights = true
+                    GKAccessPoint.shared.isActive = true
+                } else {
+                    print("DEBUG: Game Center not authenticated")
+                }
+                
                 scene.scaleMode = .aspectFill
                 //Setting the sound to true
             
-                    ACTPlayerStats.instance.setSounds(true)
+                ACTPlayerStats.instance.setSounds(true)
 
                 
                 // Present the scene
@@ -58,6 +73,14 @@ class GameViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    func didChangeAuthStatus(isAuthenticated: Bool) {
+        //
+    }
+    
+    func presentGameCenterAuth(viewController: UIViewController?) {
+        //
     }
 }
 
