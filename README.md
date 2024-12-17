@@ -11,6 +11,7 @@ When you will all the lives, you will have lost and a Game Over will be displaye
 You can restart with the same name or you can change it after you will press exit instead of pressing on the pig (Insert Coin Pig)
 The goal of the game is to do a better high score every time, trying to dodge and avoid all the bananas (because he doesn't like them).
 
+![4a8998174077767 65eb22688bdba](https://github.com/user-attachments/assets/e29f91d5-43d2-47d2-8658-e1c5ffc92fbe)
 
 
 # Screens of the game
